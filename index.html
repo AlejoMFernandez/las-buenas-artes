@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Las Buenas Artes · El clásico de Villa del Parque</title>
+<meta name="description" content="Panadería y confitería en Villa del Parque desde hace tres generaciones. Tortas, boxes, sándwiches de miga y facturas por docena: encargá online y retirá en Nogoyá 3165.">
+<meta name="theme-color" content="#F8F1EC">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://las-buenas-artes.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://las-buenas-artes.vercel.app/">
+<meta property="og:title" content="Las Buenas Artes · El clásico de Villa del Parque">
+<meta property="og:description" content="Tortas, boxes, miga y facturas por docena. Encargá online para el día que quieras.">
+<meta property="og:image" content="https://las-buenas-artes.vercel.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  // intro solo con JS y sin "reducir movimiento" (sin parpadeo: la clase se pone antes de pintar)
+  (function () {
+    var d = document.documentElement; d.classList.add('js');
+    try { if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('con-intro'); } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="preload" as="image" href="img/d/hero-141-s.webp" media="(max-width: 899px)">
+<link rel="preload" as="image" href="img/d/hero-141.webp" media="(min-width: 900px)">
+<link rel="stylesheet" href="kit/kit.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<!-- INTRO: la caja blanca que se abre -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__hoja intro__hoja--izq"></div>
+  <div class="intro__hoja intro__hoja--der"></div>
+  <div class="intro__caja">
+    <span class="intro__manija"></span>
+    <div class="intro__frente">
+      <svg class="intro__sello" viewBox="0 0 64 64" aria-hidden="true">
+        <circle class="intro__circ" cx="32" cy="34" r="28"/>
+        <path class="intro__hoja1" d="M26 14c7 9 8 22 1 36-5-11-6-24-1-36z"/>
+        <path class="intro__hoja2" d="M39 22c5 8 4 19-3 28 0-9 1-19 3-28z"/>
+        <path class="intro__hoja3" d="M33 4c4 6 4 14 0 21-2-7-2-14 0-21z"/>
+      </svg>
+      <img class="intro__logo" src="img/logo.svg" alt="" width="465" height="535">
+    </div>
+  </div>
+</div>
+
+<a class="saltar" href="#vitrina">Ir a la vitrina</a>
+
+<header class="barra" id="barra">
+  <div class="barra__in">
+    <a class="barra__logo" href="#inicio" aria-label="Las Buenas Artes, inicio"><img src="img/logo.svg" alt="Las Buenas Artes" width="465" height="535"></a>
+    <nav class="barra__nav" aria-label="Secciones">
+      <a href="#vitrina">La vitrina</a>
+      <a href="#docena">Armá tu docena</a>
+      <a href="#sala" data-sala-link hidden>Fechas especiales</a>
+      <a href="#familia">La familia</a>
+      <a href="#visitanos">Visitanos</a>
+    </nav>
+    <div class="barra__acc">
+      <span class="barra__abierto" data-abierto></span>
+      <button type="button" class="btn-caja" data-kit-open="carrito" data-kit-target aria-label="Abrir tu caja">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h14l-1 11H6z"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/></svg>
+        <span class="btn-caja__txt">Tu caja</span><b class="btn-caja__n" data-caja-n>0</b>
+      </button>
+      <button type="button" class="btn-menu" aria-label="Abrir el menú" aria-expanded="false" aria-controls="menu" data-menu>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="guarda-progreso" aria-hidden="true"><i></i></div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Menú">
+    <a href="#vitrina" data-cierra>La vitrina</a>
+    <a href="#docena" data-cierra>Armá tu docena</a>
+    <a href="#sala" data-cierra data-sala-link hidden>Fechas especiales</a>
+    <a href="#familia" data-cierra>La familia</a>
+    <a href="#encargar" data-cierra>Cómo encargar</a>
+    <a href="#visitanos" data-cierra>Visitanos</a>
+  </nav>
+  <a class="btn btn--wa" href="https://wa.me/5491130017671" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+</div>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-t">
+    <div class="hero__in">
+      <div class="hero__txt">
+        <p class="kicker hero__k"><span>Panadería y confitería</span> <span>· tres generaciones</span></p>
+        <h1 class="hero__t" id="hero-t"><span class="linea"><span>El clásico de</span></span> <span class="linea"><em>Villa del Parque</em></span></h1>
+        <p class="hero__p">Tortas, boxes, sándwiches de miga y facturas por docena, hechos en Nogoyá 3165. Elegí, encargá para el día que quieras y pasá a buscar.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--pri" href="#vitrina">Encargá online</a>
+          <a class="btn btn--sec" href="#docena">Armá tu docena</a>
+        </div>
+        <ul class="hero__datos">
+          <li data-abierto-largo>Abierto todos los días desde las 7</li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Las+Buenas+Artes+Nogoy%C3%A1+3165" target="_blank" rel="noopener">★ 4,4 · 1.920 reseñas en Google</a></li>
+        </ul>
+      </div>
+      <div class="hero__obra">
+        <figure class="arco arco--hero">
+          <picture>
+            <source media="(min-width: 900px)" srcset="img/d/hero-141.webp" width="1100" height="1375">
+            <img src="img/d/hero-141-s.webp" alt="Chocotorta de Las Buenas Artes, sostenida frente al delantal con el logo" width="560" height="700" fetchpriority="high" decoding="async">
+          </picture>
+        </figure>
+        <figure class="hero__circulo" aria-hidden="true"><img src="img/d/hero-110-s.webp" alt="" width="560" height="700" decoding="async"></figure>
+        <div class="cartela cartela--hero">
+          <span class="cartela__n">Obra N.º 01 · Sala de tortas</span>
+          <b class="cartela__t">Chocotorta</b>
+          <span class="cartela__d">«La mejor del mundo», según ellos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA VITRINA: catálogo con el kit -->
+  <section class="sec vitrina" id="vitrina" aria-labelledby="vitrina-t">
+    <div class="cont">
+      <header class="sec__head">
+        <div>
+          <p class="kicker reveal">La vitrina</p>
+          <h2 class="sec__t reveal" id="vitrina-t">¿Qué te llevás hoy?</h2>
+        </div>
+        <p class="sec__p reveal">Una sala por vez. Sumá lo que quieras a tu caja y elegí el día de retiro al cerrar el encargo.</p>
+      </header>
+      <div class="vitrina__grid">
+        <div class="vitrina__carta" data-kit="carta"></div>
+        <aside class="vitrina__foto" aria-hidden="true">
+          <figure class="arco arco--vitrina"><img data-foto-grande src="img/p/chocotorta.webp" alt="" width="720" height="900" decoding="async" loading="lazy"></figure>
+          <div class="cartela cartela--vitrina"><span class="cartela__n" data-foto-n>Obra N.º 01</span><b class="cartela__t" data-foto-t>Chocotorta</b><span class="cartela__d">Pasá el mouse por la lista</span></div>
+        </aside>
+      </div>
+      <div class="vitrina__nav">
+        <button type="button" class="btn btn--sec" data-sala-prev>← Anterior</button>
+        <button type="button" class="btn btn--osc" data-sala-next>Siguiente →</button>
+      </div>
+      <p class="vitrina__nota reveal">Los precios todavía no están cargados: se puede armar el encargo igual y el local lo confirma por WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- ARMÁ TU DOCENA -->
+  <section class="sec docena" id="docena" aria-labelledby="docena-t">
+    <div class="cont docena__in">
+      <header class="docena__head">
+        <p class="kicker reveal">Armá tu docena</p>
+        <h2 class="sec__t reveal" id="docena-t">«12 razones para ser feliz»</h2>
+        <p class="sec__p reveal">Cada sabor es un lunar del papel de la casa. <span class="solo-touch">Tocalo y cae en la caja.</span><span class="solo-mouse">Arrastralo a la caja o hacé clic.</span> Tocá una factura de la caja para sacarla.</p>
+      </header>
+      <div class="docena__mesa">
+        <ul class="docena__sabores" data-sabores aria-label="Sabores"></ul>
+        <div class="docena__caja-wrap">
+          <div class="docena__caja" data-caja>
+            <span class="docena__manija" aria-hidden="true"></span>
+            <span class="docena__cont" aria-live="polite"><b data-docena-n>0</b> / 12</span>
+            <ol class="docena__grilla" data-grilla aria-label="Tu docena"></ol>
+            <div class="docena__tapa" aria-hidden="true"><img src="img/logo.svg" alt="" width="465" height="535"></div>
+          </div>
+          <p class="docena__detalle" data-docena-detalle aria-live="polite">Elegí 12 facturas.</p>
+          <div class="docena__acc">
+            <button type="button" class="btn btn--sec" data-docena-azar>Completar al azar</button>
+            <button type="button" class="btn btn--pri" data-docena-sumar disabled>Sumar la docena a tu caja</button>
+          </div>
+          <button type="button" class="link-chico" data-docena-vaciar>Vaciar la caja</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SALA TEMPORARIA (fecha especial, sale del panel) -->
+  <section class="sec sala" id="sala" aria-labelledby="sala-t" hidden>
+    <div class="cont">
+      <div class="sala__head">
+        <div>
+          <p class="kicker kicker--claro reveal">La sala temporaria</p>
+          <h2 class="sec__t reveal" id="sala-t" data-sala-t>Navidad en Las Buenas Artes</h2>
+          <p class="sec__p reveal" data-sala-p></p>
+        </div>
+        <div class="sala__cuenta reveal" data-sala-cuenta></div>
+      </div>
+      <ul class="sala__lista arrastrable" data-sala-lista></ul>
+    </div>
+  </section>
+
+  <!-- LA FAMILIA -->
+  <section class="sec familia" id="familia" aria-labelledby="familia-t">
+    <div class="cont familia__in">
+      <figure class="familia__foto revela">
+        <picture>
+          <source media="(min-width: 900px)" srcset="img/d/medialunas-h.webp" width="1400" height="1050">
+          <img src="img/d/medialunas-v.webp" alt="Bandeja de medialunas recién horneadas" width="800" height="1421" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+      <div class="familia__txt">
+        <p class="kicker reveal">La familia</p>
+        <h2 class="sec__t reveal" id="familia-t">El arte de la <em>medialuna</em></h2>
+        <blockquote class="familia__cita reveal">«Hace tres generaciones empezamos a amasar en Villa del Parque. Hoy seguimos haciéndolo, con el mismo cuidado de siempre.»</blockquote>
+        <p class="sec__p reveal">Detrás de cada medialuna hay manos que las preparan una por una. Pan, facturas, tortas y sándwiches de elaboración propia, con el mostrador lleno desde las 7 de la mañana.</p>
+        <ul class="familia__datos reveal">
+          <li><b>7 h</b><span>abrimos todos los días</span></li>
+          <li><b>4,4 ★</b><span>1.920 reseñas en Google</span></li>
+          <li><b>3</b><span>generaciones en el barrio</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO ENCARGAR -->
+  <section class="sec encargar" id="encargar" aria-labelledby="encargar-t">
+    <div class="cont encargar__in">
+      <div class="encargar__txt">
+        <p class="kicker reveal">Cómo encargar</p>
+        <h2 class="sec__t reveal" id="encargar-t">De la vitrina a tu mesa</h2>
+        <ol class="pasos">
+          <li class="paso reveal"><span class="paso__n">01</span><div><b>Elegí en la vitrina</b><p>Tortas, boxes, miga o tu docena armada. Todo va a tu caja.</p></div></li>
+          <li class="paso reveal"><span class="paso__n">02</span><div><b>Poné el día y la franja</b><p>Solo te ofrecemos días en que abrimos y con el tiempo que necesita cada cosa (las tortas, 48&nbsp;h).</p></div></li>
+          <li class="paso reveal"><span class="paso__n">03</span><div><b>Mandalo o pagalo</b><p>Por WhatsApp, que te confirmamos el precio, o con Mercado Pago cuando ya está todo con precio. Retirás en Nogoyá 3165.</p></div></li>
+        </ol>
+        <button type="button" class="btn btn--pri reveal" data-kit-open="carrito">Ver tu caja</button>
+      </div>
+      <figure class="encargar__foto revela"><img src="img/d/delantal-caja.webp" alt="La caja blanca con manija de Las Buenas Artes, en manos de alguien con el delantal de la casa" width="1100" height="1375" loading="lazy" decoding="async"></figure>
+    </div>
+  </section>
+
+  <!-- DEL MOSTRADOR: galería -->
+  <section class="sec galeria" id="galeria" aria-labelledby="galeria-t">
+    <div class="cont">
+      <header class="sec__head">
+        <div>
+          <p class="kicker reveal">Del mostrador</p>
+          <h2 class="sec__t reveal" id="galeria-t">Fotos que se escuchan crujir</h2>
+        </div>
+        <p class="sec__p reveal"><span class="solo-touch">Deslizá la foto de arriba para ver la siguiente.</span><span class="solo-mouse">Pasá el mouse por cada obra para leer su cartela.</span></p>
+      </header>
+      <div class="galeria__mosaico" data-galeria></div>
+      <div class="mazo" data-mazo aria-roledescription="mazo de fotos"></div>
+      <div class="mazo__acc"><button type="button" class="btn btn--sec" data-mazo-sig>Siguiente foto</button><span class="mazo__cont" data-mazo-cont></span></div>
+    </div>
+  </section>
+
+  <!-- VISITANOS -->
+  <section class="sec visitanos" id="visitanos" aria-labelledby="visitanos-t">
+    <div class="cont visitanos__in">
+      <figure class="visitanos__foto revela"><img src="img/d/frente.webp" alt="Frente de Las Buenas Artes: panadería, confitería, servicio de lunch" width="1100" height="1375" loading="lazy" decoding="async"></figure>
+      <div class="visitanos__datos">
+        <p class="kicker reveal">Visitanos</p>
+        <h2 class="sec__t reveal" id="visitanos-t">Nogoyá 3165, <em>Villa del Parque</em></h2>
+        <p class="estado reveal" data-estado-largo></p>
+        <table class="horarios reveal" aria-label="Horarios">
+          <tbody data-horarios></tbody>
+        </table>
+        <div class="visitanos__acc reveal">
+          <a class="btn btn--wa" href="https://wa.me/5491130017671?text=Hola%20Las%20Buenas%20Artes!" target="_blank" rel="noopener">WhatsApp 11 3001-7671</a>
+          <a class="btn btn--sec" href="https://www.google.com/maps/search/?api=1&query=Las+Buenas+Artes+Nogoy%C3%A1+3165+CABA" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+        <p class="visitanos__mini reveal">Teléfono <a href="tel:+541145011358">4501-1358</a> · <a href="https://www.instagram.com/lasbuenasartes/" target="_blank" rel="noopener">@lasbuenasartes</a></p>
+      </div>
+      <div class="visitanos__mapa revela">
+        <iframe title="Mapa: Las Buenas Artes, Nogoyá 3165" data-src="https://www.google.com/maps?q=Las+Buenas+Artes,+Nogoy%C3%A1+3165,+CABA&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="guarda" aria-hidden="true"></div>
+  <div class="cont pie__in">
+    <img class="pie__logo" src="img/logo-claro.svg" alt="Las Buenas Artes" width="465" height="535" loading="lazy">
+    <div class="pie__col">
+      <b>Las Buenas Artes</b>
+      <span>Panadería y confitería · Servicio de lunch</span>
+      <span>Nogoyá 3165, Villa del Parque, CABA</span>
+    </div>
+    <div class="pie__col">
+      <a href="#vitrina">La vitrina</a>
+      <a href="#docena">Armá tu docena</a>
+      <a href="#encargar">Cómo encargar</a>
+      <a href="admin/" target="_blank" rel="noopener">Panel del local</a>
+    </div>
+    <div class="pie__col">
+      <a href="https://wa.me/5491130017671" target="_blank" rel="noopener">WhatsApp 11 3001-7671</a>
+      <a href="tel:+541145011358">Teléfono 4501-1358</a>
+      <a href="https://www.instagram.com/lasbuenasartes/" target="_blank" rel="noopener">Instagram @lasbuenasartes</a>
+    </div>
+  </div>
+  <p class="pie__credito">Sitio desarrollado por <a href="https://alejomfernandez.com.ar" target="_blank" rel="noopener">Alejo Martín Fernández</a></p>
+</footer>
+
+<script type="module" src="js/main.js?v=4"></script>
+</body>
+</html>

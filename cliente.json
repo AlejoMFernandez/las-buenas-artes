@@ -1,0 +1,568 @@
+{
+  "id": "las-buenas-artes",
+  "nombre": "Las Buenas Artes",
+  "pais": "AR",
+  "idioma": "es",
+  "modo": "demo",
+  "whatsapp": "5491130017671",
+  "prefijoPedido": "LBA",
+  "supabase": {
+    "url": "",
+    "anonKey": ""
+  },
+  "marca": {
+    "logo": "img/logo.svg",
+    "logoPanel": "img/logo-claro.svg",
+    "favicon": "img/favicon.svg",
+    "colores": {
+      "fondo": "#F8F1EC",
+      "superficie": "#FFFFFF",
+      "texto": "#2E1D14",
+      "primario": "#7C2A24",
+      "sobrePrimario": "#FFFFFF",
+      "acento": "#B0573D",
+      "sobreAcento": "#FFFFFF",
+      "borde": "#DCC6B9",
+      "suave": "#6B5244",
+      "ok": "#2F6B45",
+      "alerta": "#9A5A12"
+    },
+    "fuentes": {
+      "titulos": "'Cormorant Garamond', Georgia, serif",
+      "texto": "'Figtree', system-ui, sans-serif",
+      "googleFonts": "Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Figtree:wght@400;500;600;700&family=Cinzel:wght@600"
+    },
+    "estilo": {
+      "forma": "pildora",
+      "radio": "18px",
+      "sombra": "suave",
+      "borde": "1.5px",
+      "mayusculas": false
+    }
+  },
+  "modulos": {
+    "carta": true,
+    "carrito": true,
+    "reservas": false,
+    "admin": true,
+    "fechas": true
+  },
+  "horarios": {
+    "lun": [
+      [
+        "07:00",
+        "20:30"
+      ]
+    ],
+    "mar": [
+      [
+        "07:00",
+        "20:30"
+      ]
+    ],
+    "mie": [
+      [
+        "07:00",
+        "20:30"
+      ]
+    ],
+    "jue": [
+      [
+        "07:00",
+        "20:30"
+      ]
+    ],
+    "vie": [
+      [
+        "07:00",
+        "21:00"
+      ]
+    ],
+    "sab": [
+      [
+        "07:00",
+        "21:00"
+      ]
+    ],
+    "dom": [
+      [
+        "07:00",
+        "20:30"
+      ]
+    ]
+  },
+  "pedidos": {
+    "salidas": [
+      "whatsapp",
+      "mercadopago"
+    ],
+    "tipos": [
+      "retiro",
+      "delivery"
+    ],
+    "envio": 0,
+    "minimo": 0,
+    "sinPrecio": "a_confirmar",
+    "encargo": {
+      "anticipacionHoras": 12,
+      "diasAdelante": 14,
+      "franjas": [
+        {
+          "id": "manana",
+          "nombre": "Mañana",
+          "desde": "07:00",
+          "hasta": "12:00"
+        },
+        {
+          "id": "mediodia",
+          "nombre": "Mediodía",
+          "desde": "12:00",
+          "hasta": "16:00"
+        },
+        {
+          "id": "tarde",
+          "nombre": "Tarde",
+          "desde": "16:00",
+          "hasta": "20:30"
+        }
+      ],
+      "cerrados": [
+        "2026-12-25",
+        "2027-01-01"
+      ]
+    }
+  },
+  "pagos": {
+    "mercadopago": {
+      "endpoint": "https://kit-demos-amf.vercel.app/api/mp-preference",
+      "modo": "sandbox"
+    }
+  },
+  "carta": {
+    "categorias": [
+      {
+        "id": "tortas",
+        "nombre": "Tortas",
+        "anticipacionHoras": 48
+      },
+      {
+        "id": "boxes",
+        "nombre": "Boxes y desayunos",
+        "anticipacionHoras": 24
+      },
+      {
+        "id": "miga",
+        "nombre": "Sándwiches de miga",
+        "anticipacionHoras": 12
+      },
+      {
+        "id": "facturas",
+        "nombre": "Facturas por docena",
+        "anticipacionHoras": 0
+      },
+      {
+        "id": "navidad",
+        "nombre": "Navidad",
+        "especial": true,
+        "desde": "2026-12-01",
+        "hasta": "2026-12-24",
+        "avisoDias": 45,
+        "bajada": "El pan dulce de la casa, para encargar con tiempo.",
+        "anticipacionHoras": 24
+      },
+      {
+        "id": "pascuas",
+        "nombre": "Pascuas",
+        "especial": true,
+        "desde": "2027-03-15",
+        "hasta": "2027-03-27",
+        "avisoDias": 30,
+        "bajada": "Rosca, huevos de chocolate y empanadas de vigilia.",
+        "anticipacionHoras": 24
+      },
+      {
+        "id": "san-valentin",
+        "nombre": "San Valentín",
+        "especial": true,
+        "desde": "2027-02-01",
+        "hasta": "2027-02-14",
+        "avisoDias": 20,
+        "bajada": "Regalá dulzura.",
+        "anticipacionHoras": 24
+      },
+      {
+        "id": "dia-de-la-madre",
+        "nombre": "Día de la Madre",
+        "especial": true,
+        "desde": "2026-10-01",
+        "hasta": "2026-10-18",
+        "avisoDias": 15,
+        "bajada": "Que el domingo empiece con algo dulce.",
+        "anticipacionHoras": 24
+      }
+    ],
+    "productos": [
+      {
+        "id": "chocotorta",
+        "categoria": "tortas",
+        "nombre": "Chocotorta",
+        "descripcion": "Capas bien marcadas, crema y mucho chocolate.",
+        "precio": null,
+        "foto": "img/p/chocotorta.webp",
+        "etiquetas": [
+          "casa"
+        ]
+      },
+      {
+        "id": "choco-frutillas",
+        "categoria": "tortas",
+        "nombre": "Chocolate y frutillas",
+        "descripcion": "Una de las tortas estrella de la casa.",
+        "precio": null,
+        "foto": "img/p/choco-frutillas.webp"
+      },
+      {
+        "id": "ferrero",
+        "categoria": "tortas",
+        "nombre": "Torta Ferrero",
+        "descripcion": "Chocolate y avellanas, coronada con un bombón.",
+        "precio": null,
+        "foto": "img/p/ferrero.webp"
+      },
+      {
+        "id": "rogel",
+        "categoria": "tortas",
+        "nombre": "Rogel",
+        "descripcion": "Capas finas, mucho dulce de leche y merengue.",
+        "precio": null,
+        "foto": "img/p/rogel.webp"
+      },
+      {
+        "id": "oreo",
+        "categoria": "tortas",
+        "nombre": "Oreo",
+        "descripcion": "Oreo, dulce de leche y mucho chocolate.",
+        "precio": null,
+        "foto": "img/p/oreo.webp"
+      },
+      {
+        "id": "marquise",
+        "categoria": "tortas",
+        "nombre": "Marquise",
+        "descripcion": "Base de brownie, dulce de leche y crema.",
+        "precio": null,
+        "foto": "img/p/marquise.webp"
+      },
+      {
+        "id": "rocklets",
+        "categoria": "tortas",
+        "nombre": "Torta Rocklets",
+        "descripcion": "Chocolate y color: la de los cumpleaños.",
+        "precio": null,
+        "foto": "img/p/rocklets.webp"
+      },
+      {
+        "id": "balcarce",
+        "categoria": "tortas",
+        "nombre": "Balcarce",
+        "descripcion": "Artesanal, hecha en el día.",
+        "precio": null,
+        "foto": "img/p/balcarce.webp"
+      },
+      {
+        "id": "brownie",
+        "categoria": "tortas",
+        "nombre": "Torta brownie",
+        "descripcion": "Brownie, dulce de leche y merengue.",
+        "precio": null,
+        "foto": "img/p/brownie.webp"
+      },
+      {
+        "id": "cheesecake",
+        "categoria": "tortas",
+        "nombre": "Cheesecake de frutos rojos",
+        "descripcion": "Entera, en porción o en vasito.",
+        "precio": null,
+        "foto": "img/p/cheesecake.webp"
+      },
+      {
+        "id": "box-regalo",
+        "categoria": "boxes",
+        "nombre": "Box de regalo",
+        "descripcion": "Caja de la casa con una selección dulce. Contenido a confirmar.",
+        "precio": null,
+        "foto": "img/p/box-regalo.webp"
+      },
+      {
+        "id": "desayuno",
+        "categoria": "boxes",
+        "nombre": "Desayuno para regalar",
+        "descripcion": "Para empezar el día con algo dulce. Contenido a confirmar.",
+        "precio": null,
+        "foto": "img/p/desayuno.webp",
+        "etiquetas": [
+          "casa"
+        ]
+      },
+      {
+        "id": "bandeja-dulce",
+        "categoria": "boxes",
+        "nombre": "Bandeja para compartir",
+        "descripcion": "Galletitas, alfajores y algo dulce para cada uno.",
+        "precio": null,
+        "foto": "img/p/bandeja-dulce.webp"
+      },
+      {
+        "id": "bombones",
+        "categoria": "boxes",
+        "nombre": "Caja de bombones",
+        "descripcion": "Bombones de la casa, para regalar o regalarte.",
+        "precio": null,
+        "foto": "img/p/bombones.webp"
+      },
+      {
+        "id": "masitas",
+        "categoria": "boxes",
+        "nombre": "Bandeja de masitas",
+        "descripcion": "Masitas finas para la mesa dulce.",
+        "precio": null,
+        "foto": "img/p/masitas.webp"
+      },
+      {
+        "id": "alfajorcitos",
+        "categoria": "boxes",
+        "nombre": "Mini alfajores de maicena",
+        "descripcion": "Con dulce de leche y coco alrededor.",
+        "precio": null,
+        "foto": "img/p/alfajorcitos.webp"
+      },
+      {
+        "id": "triples-jyq",
+        "categoria": "miga",
+        "nombre": "Triples de jamón y queso",
+        "descripcion": "El favorito de Villa del Parque. Por docena.",
+        "precio": null,
+        "foto": "img/p/triples-jyq.webp",
+        "etiquetas": [
+          "casa"
+        ]
+      },
+      {
+        "id": "chacarero",
+        "categoria": "miga",
+        "nombre": "Triples chacarero",
+        "descripcion": "El que enamora a todos. Por docena.",
+        "precio": null,
+        "foto": "img/p/chacarero.webp"
+      },
+      {
+        "id": "triples-crudo",
+        "categoria": "miga",
+        "nombre": "Miga con jamón crudo",
+        "descripcion": "Con crudo recién cortado por encima. Por docena.",
+        "precio": null,
+        "foto": "img/p/triples-crudo.webp"
+      },
+      {
+        "id": "triples-veggie",
+        "categoria": "miga",
+        "nombre": "Triples vegetarianos",
+        "descripcion": "Edición vegetariana. Por docena.",
+        "precio": null,
+        "foto": "img/p/triples-veggie.webp",
+        "etiquetas": [
+          "veggie"
+        ]
+      },
+      {
+        "id": "pebetes",
+        "categoria": "miga",
+        "nombre": "Bandeja de sanguchitos",
+        "descripcion": "Para la juntada, la reunión o el almuerzo.",
+        "precio": null,
+        "foto": "img/p/pebetes.webp"
+      },
+      {
+        "id": "docena-surtida",
+        "categoria": "facturas",
+        "nombre": "Docena surtida",
+        "descripcion": "Doce facturas variadas, recién hechas.",
+        "precio": null,
+        "foto": "img/p/docena-surtida.webp",
+        "etiquetas": [
+          "casa"
+        ]
+      },
+      {
+        "id": "docena-armada",
+        "categoria": "facturas",
+        "nombre": "Docena armada a tu gusto",
+        "descripcion": "La que armás vos con «Armá tu docena».",
+        "precio": null,
+        "foto": "img/p/medialunas-manteca.webp"
+      },
+      {
+        "id": "medialunas-manteca",
+        "categoria": "facturas",
+        "nombre": "Medialunas de manteca",
+        "descripcion": "«Las mejores de Villa del Parque». Por docena.",
+        "precio": null,
+        "foto": "img/p/medialunas-manteca.webp"
+      },
+      {
+        "id": "medialunas-grasa",
+        "categoria": "facturas",
+        "nombre": "Medialunas de grasa",
+        "descripcion": "Clásicas, recién horneadas. Por docena.",
+        "precio": null,
+        "foto": "img/p/medialunas-grasa.webp"
+      },
+      {
+        "id": "pastelera-membrillo",
+        "categoria": "facturas",
+        "nombre": "Pastelera y membrillo",
+        "descripcion": "«¿Solo pastelera o con membrillo también?» Por docena.",
+        "precio": null,
+        "foto": "img/p/pastelera-membrillo.webp"
+      },
+      {
+        "id": "cremonas",
+        "categoria": "facturas",
+        "nombre": "Cremona",
+        "descripcion": "Recién salida del horno, para el mate.",
+        "precio": null,
+        "foto": "img/p/cremonas.webp"
+      },
+      {
+        "id": "chipa",
+        "categoria": "facturas",
+        "nombre": "Chipá",
+        "descripcion": "Para el mate de la tarde. Por docena.",
+        "precio": null,
+        "foto": "img/p/chipa.webp"
+      },
+      {
+        "id": "pan-dulce",
+        "categoria": "navidad",
+        "nombre": "Pan dulce de la casa",
+        "descripcion": "«El mejor pan dulce de Villa del Parque». Variedades a confirmar.",
+        "precio": null,
+        "foto": "img/p/pan-dulce.webp",
+        "etiquetas": [
+          "casa"
+        ]
+      },
+      {
+        "id": "budines-navidad",
+        "categoria": "navidad",
+        "nombre": "Budines y roscas de las fiestas",
+        "descripcion": "Para la mesa del 24. Variedades a confirmar.",
+        "precio": null,
+        "foto": "img/p/budines-navidad.webp"
+      },
+      {
+        "id": "caja-dorada",
+        "categoria": "navidad",
+        "nombre": "Caja dorada de bombones",
+        "descripcion": "Para regalar en las fiestas.",
+        "precio": null,
+        "foto": "img/p/caja-dorada.webp"
+      },
+      {
+        "id": "rosca-pascua",
+        "categoria": "pascuas",
+        "nombre": "Rosca de Pascua",
+        "descripcion": "Con crema pastelera y frutas.",
+        "precio": null,
+        "foto": "img/p/rosca-pascua.webp",
+        "etiquetas": [
+          "casa"
+        ]
+      },
+      {
+        "id": "huevos-pascua",
+        "categoria": "pascuas",
+        "nombre": "Huevos de chocolate",
+        "descripcion": "Decorados a mano, de varios tamaños.",
+        "precio": null,
+        "foto": "img/p/huevos-pascua.webp"
+      },
+      {
+        "id": "huevitos",
+        "categoria": "pascuas",
+        "nombre": "Huevitos para regalar",
+        "descripcion": "En bolsitas y canastas.",
+        "precio": null,
+        "foto": "img/p/huevitos.webp"
+      },
+      {
+        "id": "empanadas-vigilia",
+        "categoria": "pascuas",
+        "nombre": "Empanadas de vigilia",
+        "descripcion": "Recién hechas y bien rellenas. Por docena.",
+        "precio": null,
+        "foto": "img/p/empanadas-vigilia.webp"
+      },
+      {
+        "id": "corazones-chocolate",
+        "categoria": "san-valentin",
+        "nombre": "Corazones de chocolate",
+        "descripcion": "En palito, envueltos de colores.",
+        "precio": null,
+        "foto": "img/p/corazones-chocolate.webp"
+      },
+      {
+        "id": "caja-corazon",
+        "categoria": "san-valentin",
+        "nombre": "Corazón de bombones",
+        "descripcion": "Bombones surtidos en caja corazón.",
+        "precio": null,
+        "foto": "img/p/corazon-bombones.webp"
+      },
+      {
+        "id": "desayuno-mama",
+        "categoria": "dia-de-la-madre",
+        "nombre": "Desayuno para mamá",
+        "descripcion": "Encargalo y que el domingo empiece con algo dulce.",
+        "precio": null,
+        "foto": "img/p/desayuno.webp"
+      },
+      {
+        "id": "bombones-mama",
+        "categoria": "dia-de-la-madre",
+        "nombre": "Bombones surtidos",
+        "descripcion": "En caja de regalo.",
+        "precio": null,
+        "foto": "img/p/bombones-surtidos.webp"
+      }
+    ]
+  },
+  "textos": {
+    "tuPedido": "Tu caja",
+    "verPedido": "Tu caja",
+    "agregar": "Sumar",
+    "carritoVacio": "Tu caja está vacía.",
+    "carritoVacioSub": "Elegí algo de la vitrina y aparece acá.",
+    "seguir": "Seguir mirando",
+    "retiro": "Retiro en Nogoyá 3165",
+    "delivery": "Envío (a coordinar)",
+    "notaPedido": "Algo más (dedicatoria, una vela, sin TACC…)",
+    "comoPagas": "¿Cómo lo cerrás?",
+    "porWhatsappSub": "Coordinás el pago con el local",
+    "enviarPedido": "Mandar el encargo por WhatsApp",
+    "pedidoListo": "¡Tu caja ya va camino al mostrador!",
+    "pedidoListoSub": "Encargo {codigo}. Ya figura en el panel del local y te confirman por WhatsApp.",
+    "pedidoPagadoSub": "Encargo {codigo} pagado. Ya está en el panel del local.",
+    "waPedido": "Hola {negocio}! Quiero hacer este encargo:",
+    "waCodigo": "Encargo {codigo}",
+    "carta": "Catálogo",
+    "plato": "Producto",
+    "agregarPlato": "Agregar producto",
+    "buscarPlato": "Buscar un producto…",
+    "seccionVacia": "Esta sección todavía no tiene productos.",
+    "vacioCategoria": "Esta sección todavía no tiene productos.",
+    "pedidosHoy": "Encargos",
+    "pedidos": "Encargos",
+    "nPedidos": "Encargos de hoy: {n}"
+  }
+}
