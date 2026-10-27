@@ -85,27 +85,23 @@ section[id] { scroll-margin-top: calc(var(--barra) + 8px); }
   opacity: 0; transform: translateY(18px) scale(.94); transition: opacity .35s, transform .5s var(--ease); }
 .intro__manija { position: absolute; left: 50%; top: -38px; width: 66px; height: 44px; margin-left: -33px; border: 8px solid #fff; border-bottom: 0; border-radius: 18px 18px 0 0; filter: drop-shadow(0 -1px 0 #e7d7cd); }
 .intro__frente { position: absolute; inset: 0; display: grid; place-items: center; }
-.intro__sello { position: absolute; width: 74px; top: 22px; left: 50%; margin-left: -37px; overflow: visible; }
-.intro__sello * { fill: transparent; stroke-width: 1.6; stroke-linejoin: round; }
-.intro__circ { stroke: #1a110d; stroke-dasharray: 180; stroke-dashoffset: 180; transition: stroke-dashoffset .5s var(--ease), fill .3s .35s; }
-.intro__hoja1 { stroke: var(--bordo); stroke-dasharray: 90; stroke-dashoffset: 90; transition: stroke-dashoffset .4s .18s, fill .25s .5s; }
-.intro__hoja2 { stroke: var(--espiga); stroke-dasharray: 70; stroke-dashoffset: 70; transition: stroke-dashoffset .4s .26s, fill .25s .55s; }
-.intro__hoja3 { stroke: var(--rosa); stroke-dasharray: 50; stroke-dashoffset: 50; transition: stroke-dashoffset .4s .32s, fill .25s .6s; }
-.intro__logo { position: absolute; width: 112px; left: 50%; margin-left: -56px; top: 30px; clip-path: inset(0 100% 0 0); transition: clip-path .45s var(--ease); }
-/* pasos (las clases las pone main.js) */
+.intro__logo { position: absolute; width: 100px; height: auto; left: 50%; margin-left: -50px; top: 26px; overflow: visible; }
+.intro__logo path { transform-box: fill-box; }
+.lg-circ { transform-origin: 50% 50%; transform: scale(.2); opacity: 0; transition: transform .5s cubic-bezier(.3, 1.4, .5, 1), opacity .2s; }
+.lg-hoja { transform-origin: 50% 100%; transform: translateY(18%) scaleY(.4); opacity: 0; transition: transform .45s var(--ease), opacity .25s; }
+.lg-h1 { transition-delay: .16s; } .lg-h2 { transition-delay: .24s; } .lg-h3 { transition-delay: .32s; }
+.lg-n { clip-path: inset(0 100% 0 0); transition: clip-path .45s var(--ease); }
+.lg-n1 { transition-delay: .26s; } .lg-n2 { transition-delay: .4s; }
 .intro.p1 .intro__caja { opacity: 1; transform: none; }
-.intro.p2 .intro__sello * { stroke-dashoffset: 0; }
-.intro.p2 .intro__circ { fill: #1a110d; } .intro.p2 .intro__hoja1 { fill: var(--bordo); } .intro.p2 .intro__hoja2 { fill: var(--espiga); } .intro.p2 .intro__hoja3 { fill: var(--rosa); }
-.intro.p3 .intro__sello { opacity: 0; transition: opacity .2s; }
-.intro.p3 .intro__logo { clip-path: inset(0 0 0 0); }
+.intro.p2 .lg-circ, .intro.p2 .lg-hoja { transform: none; opacity: 1; }
+.intro.p2 .lg-n { clip-path: inset(0 -2% 0 0); }
 .intro.p4 .intro__caja { opacity: 0; transform: scale(1.08); transition: opacity .3s, transform .4s var(--ease); }
 .intro.p4 .intro__hoja--izq { transform: translateX(-101%); }
 .intro.p4 .intro__hoja--der { transform: translateX(101%); }
 @media (min-width: 1024px) {
   .intro__caja { width: 220px; height: 220px; margin: -92px 0 0 -110px; }
   .intro__manija { width: 86px; margin-left: -43px; top: -48px; height: 56px; border-width: 10px; }
-  .intro__sello { width: 96px; margin-left: -48px; top: 30px; }
-  .intro__logo { width: 150px; margin-left: -75px; top: 36px; }
+  .intro__logo { width: 132px; margin-left: -66px; top: 34px; }
   .intro__hoja { transition-duration: .8s; }
 }
 @keyframes intro-seguro { to { opacity: 0; visibility: hidden; } }

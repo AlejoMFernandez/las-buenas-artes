@@ -9,6 +9,8 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const esMouse = () => matchMedia('(hover: hover) and (pointer: fine)').matches;
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 const pad2 = (n) => String(n).padStart(2, '0');
+// miniatura liviana para las fotos chicas de la carta (las cargadas desde el panel quedan como están)
+const miniatura = (f) => (/^img\/p\/[^/]+\.webp$/.test(f || '') ? f.replace('img/p/', 'img/p/t/') : f);
 
 // =============================== INTRO: la caja que se abre ===============================
 (function intro() {
@@ -21,10 +23,9 @@ const pad2 = (n) => String(n).padStart(2, '0');
   const todoListo = Promise.race([Promise.all([document.fonts ? document.fonts.ready : null, imgLista]), espera(2600)]);
   const t0 = performance.now();
   setTimeout(() => el.classList.add('p1'), 40);
-  setTimeout(() => el.classList.add('p2'), 330 * k);
-  setTimeout(() => el.classList.add('p3'), 860 * k);
+  setTimeout(() => el.classList.add('p2'), 300 * k);
   todoListo.then(async () => {
-    const falta = 1260 * k - (performance.now() - t0);
+    const falta = 300 * k + 1100 - (performance.now() - t0); // el logo termina de armarse antes de abrir
     if (falta > 0) await espera(falta);
     el.classList.add('p4');
     setTimeout(() => html.classList.add('listo'), 160);
@@ -127,6 +128,7 @@ const fechaCorta = (f) => { const [, m, d] = f.split('-').map(Number); return `$
 
 const kit = await initKit({
   config: 'cliente.json',
+  imagenes: { lqip: 'img/lqip.json' },
   fechaEspecial: params.get('sala') || null,
   carrito: { label: 'Tu caja', fab: false },
   carta: {
@@ -137,7 +139,7 @@ const kit = await initKit({
       const acc = p.id === 'docena-armada'
         ? '<a class="kit-add" href="#docena">Armala</a>'
         : ctx.pedible(p) ? `<div class="obra__acc" data-kit-qty="${esc(p.id)}"></div>` : '<span class="kit-badge kit-badge--off">Sin stock hoy</span>';
-      return `${p.foto ? `<img class="obra__img" src="${esc(ctx.asset(p.foto))}" alt="" width="96" height="96" loading="lazy" decoding="async">` : '<span class="obra__img"></span>'}
+      return `${p.foto ? `<img class="obra__img" src="${esc(ctx.asset(miniatura(p.foto)))}" alt="" width="96" height="96" loading="lazy" decoding="async">` : '<span class="obra__img"></span>'}
         <div class="obra__body"><span class="obra__n">N.º ${pad2(ctx.index + 1)}</span><h3 class="obra__t">${esc(p.nombre)}${tags}</h3>${p.descripcion ? `<p class="obra__d">${esc(p.descripcion)}</p>` : ''}</div>
         <div class="obra__pie"><span class="obra__precio">${esc(precio)}</span>${acc}</div>`;
     },
@@ -397,7 +399,7 @@ const GAL = [
   ['g131', 'Merengue y dulce de leche', '«Especial para el team dulce»'],
   ['g239', 'Las bandejas del día', '«Uno más tentador que el otro»'],
 ];
-$('[data-galeria]').innerHTML = GAL.map(([f, t, d], i) => `<figure class="obra-g revela"><img src="img/f/${f}.webp" alt="${esc(t)}" width="900" height="1125" loading="lazy" decoding="async">
+$('[data-galeria]').innerHTML = GAL.map(([f, t, d], i) => `<figure class="obra-g revela"><img src="img/f/s/${f}.webp" srcset="img/f/s/${f}.webp 520w, img/f/${f}.webp 900w" sizes="(min-width: 900px) 30vw, 46vw" alt="${esc(t)}" width="900" height="1125" loading="lazy" decoding="async">
   <figcaption class="cartela"><span class="cartela__n">Obra N.º ${pad2(i + 1)}</span><b class="cartela__t">${esc(t)}</b><span class="cartela__d">${esc(d)}</span></figcaption></figure>`).join('');
 observarReveal($('[data-galeria]'));
 
@@ -411,7 +413,7 @@ observarReveal($('[data-galeria]'));
     cont.innerHTML = orden.slice(0, 4).reverse().map((i, k, arr) => {
       const prof = arr.length - 1 - k; const [f, t, d] = GAL[i];
       return `<figure class="mazo__foto${prof === 0 ? ' arriba' : ''}" style="--r:${prof === 0 ? 0 : giros[(i + prof) % giros.length]}deg;--y:${prof * 6}px;z-index:${10 - prof}">
-        <img src="img/f/${f}.webp" alt="${esc(t)}" width="900" height="1125" ${prof > 1 ? 'loading="lazy"' : ''} decoding="async" draggable="false">
+        <img src="img/f/s/${f}.webp" srcset="img/f/s/${f}.webp 520w, img/f/${f}.webp 900w" sizes="(min-width: 900px) 420px, 80vw" alt="${esc(t)}" width="900" height="1125" ${prof > 1 ? 'loading="lazy"' : ''} decoding="async" draggable="false">
         ${prof === 0 ? `<figcaption class="cartela"><span class="cartela__n">Obra N.º ${pad2(i + 1)}</span><b class="cartela__t">${esc(t)}</b><span class="cartela__d">${esc(d)}</span></figcaption>` : ''}</figure>`;
     }).join('');
     contador.textContent = `${pad2((visto % GAL.length) + 1)} / ${pad2(GAL.length)}`;

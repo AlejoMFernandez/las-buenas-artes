@@ -11,13 +11,13 @@
   // /admin sin barra final rompe las rutas relativas en algunos servidores (XAMPP): la agregamos.
   if (!/\/$|\.html$/.test(location.pathname)) location.replace(location.pathname + '/' + location.search + location.hash);
 </script>
-<link rel="stylesheet" href="../kit/kit.css?v=4">
-<link rel="stylesheet" href="../kit/admin/admin.css?v=4">
+<link rel="stylesheet" href="../kit/kit.css?v=5">
+<link rel="stylesheet" href="../kit/admin/admin.css?v=5">
 </head>
 <body>
 <div id="kit-admin" class="kit-root kit-admin" aria-busy="true"></div>
 <script type="module">
-  import { initAdmin } from '../kit/admin/admin.js?v=4';
+  import { initAdmin } from '../kit/admin/admin.js?v=5';
   initAdmin({ config: '../cliente.json', sitio: '../' });
 </script>
 </body>
