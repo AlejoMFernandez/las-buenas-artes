@@ -1,5 +1,5 @@
 // Las Buenas Artes · demo — interacciones propias + kit-demos.
-import { initKit } from '../kit/kit.js?v=4';
+import { initKit } from '../kit/kit.js?v=18';
 
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
